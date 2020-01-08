@@ -50,8 +50,9 @@ const TemplateWrapper = ({ children }) => {
           <div className="container__sidebar">
             <div className="sidebar">
               <h6 className="sidebar__title">
-                <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
+                <Link to="/">Giovanni Bassetto </Link>
               </h6>
+                <img className="avatar__sidebar" src={'https://scontent.fldb7-1.fna.fbcdn.net/v/t1.0-9/p960x960/48424926_1824301394363315_5190873495143186432_o.jpg?_nc_cat=111&_nc_oc=AQnlrZxgcTrLM0-3C_p2LxMF9S8_IBOM_XFlAL9K5Ir9b7lmTWaza5XjXJymQacX9ww&_nc_ht=scontent.fldb7-1.fna&_nc_tp=1&oh=f759f4220797f3201187d3162fb1cc4c&oe=5EA1A832'} />
               <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
@@ -61,27 +62,45 @@ const TemplateWrapper = ({ children }) => {
               />
               <ul className="sidebar__menu">
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/" activeStyle={{ color: '#9055a2'}}>Início</Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="/about" activeStyle={{ color: '#9055a2'}}>Sobre mim</Link>
                 </li>
               </ul>
+
+              <h6 className="sidebar__title"> Redes Sociais</h6>
+
               <p className="sidebar__social">
-                {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
-                  <a
-                    key={profile.profileType}
-                    href={profile.url}
-                    target="blank"
-                    className={`social social--${profile.profileType.toLowerCase()}`}
-                  >
-                    {" "}
-                  </a>
-                ))}
+                {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => {
+                  if(profile.profileType.toLowerCase() === 'twitter') {
+                    return;
+                  } else if(profile.profileType.toLowerCase() === 'email') {
+                    return;
+                  } else {
+                    return(
+                      <a
+                        key={profile.profileType}
+                        href={profile.url}
+                        target="blank"
+                        className={`social social--${profile.profileType.toLowerCase()}`}
+                      >
+                        {" "}
+                      </a>
+                    )
+                  }
+                })}
+                <a 
+                  href="https://www.linkedin.com/in/giovanni-bassetto-69a557163/"
+                  target="blank"
+                  className="social social--linkedin"
+                >
+                  {""}
+                </a>
               </p>
-              <div className="sidebar__copyright">
-                {data.datoCmsHome.copyright}
-              </div>
+              <h6 className="sidebar__title"> Contato: </h6>
+              <p className="contato__sidebar"> Email: giovannibasseto@gmail.com </p>
+              <p className="contato__sidebar"> Celular: (43) 99872-1261 </p>
             </div>
           </div>
           <div className="container__body">

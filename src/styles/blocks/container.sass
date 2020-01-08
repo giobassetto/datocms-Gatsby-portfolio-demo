@@ -12,14 +12,15 @@
     transform: translate3d(-200px, 0, 0)
     transition: transform 0.2s ease-in-out
     padding: 20px
-    background-color: $light-bg-color
+    background-color: #212121
 
     .container.is-open &
-      transform: translate3d(0px, 0, 0);
+      transform: translate3d(0px, 0, 0)
 
   .container__body
     transform: translate3d(0px, 0, 0)
     transition: transform 0.2s ease-in-out
+    background-color: #424242
 
     .container.is-open &
       transform: translate3d(200px, 0, 0)
@@ -28,6 +29,7 @@
   .container
     display: flex
     padding: 0
+    background-color: #424242
 
   .container__mobile-header
     display: none
@@ -38,7 +40,7 @@
     min-width: 320px
     box-sizing: border-box
     padding: 40px
-    background-color: $light-bg-color
+    background-color: #212121
 
   .container__body
     flex: 1

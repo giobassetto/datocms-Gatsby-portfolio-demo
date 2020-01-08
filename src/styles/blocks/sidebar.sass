@@ -1,18 +1,19 @@
 .sidebar__title
-  margin-bottom: 20px
+  margin-bottom: 10px
+  color: white
 
   a
     font-size: 18px
     text-transform: uppercase
     font-weight: bold
     text-decoration: none
-    color: $dark-body-color
+    color: white
 
     &:hover
-      border-bottom: dotted 1px #9055a2
+      border-bottom: dashed 1px $active-color
 
 .sidebar__intro
-  color: $light-body-color
+  color: white
   font-size: 14px
   margin-bottom: 20px
 
@@ -30,7 +31,7 @@
       text-decoration: none
       display: block
       padding-left: 20px
-      color: $base-body-color
+      color: white
       position: relative
 
       &:before
@@ -57,6 +58,23 @@
 .sidebar__social
   margin-bottom: 20px
 
+  a
+    text-decoration: none
+    background-color: white
+    &:hover
+      background-color: $active-color
+
+.avatar__sidebar
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  text-align: center
+
 .sidebar__copyright
-  color: $light-body-color
+  color: white
   font-size: 13px
+
+.contato__sidebar
+  color: white
+  font-size: 14px
+
